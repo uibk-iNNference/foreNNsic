@@ -1,0 +1,22 @@
+\begin{tabular}{l @@for i in model_types@@ @@for m in execution_hosts@@@{~}c@@endfor@@@@endfor@@ @{}r}
+    \textbf{Dataset} & 
+        @@ for model_type in model_types @@
+            \multicolumn{@=execution_hosts|length=@}{c}{@=model_type=@} &
+        @@ endfor @@ \\
+        @@ for i in range(model_types|length) @@
+            \cmidrule(lr){@=2+i*execution_hosts|length=@-@=2+(i+1)*execution_hosts|length-1=@}
+        @@ endfor @@
+
+    \textbf{Executed on} &
+        @@ for model in model_types@@
+            @@ for eh in execution_hosts @@
+                @=eh=@  &
+            @@ endfor @@
+        @@ endfor @@ \\
+    \midrule
+
+    @@for host,classes in rows.items()@@
+        @=host=@ &@@for class in classes@@ @=class=@ &@@endfor@@\\
+    @@endfor@@
+    
+\end{tabular}

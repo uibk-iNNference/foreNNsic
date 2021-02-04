@@ -1,0 +1,7 @@
+\begin{tabular}{c @@for host in hosts@@ r @@endfor@@ c} % last c again to fix loop
+    CPU & @@for host in hosts@@ @=host=@ &@@endfor@@ \\
+    \midrule
+    @@ for host,results in rows.items() @@
+    @= host =@ & @@for value in results@@@=value=@ & @@endfor@@ \\
+    @@ endfor @@
+\end{tabular}

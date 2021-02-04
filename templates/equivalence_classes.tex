@@ -1,0 +1,37 @@
+\begin{tabular}{l @@for i in model_types@@@@for j in tf_versions@@@@for k in inputs@@r@@endfor@@ @@endfor@@ @@endfor@@ c} % last column is to make the loop work
+    \textbf{Dataset} & 
+        @@ for model_type in model_types @@
+            \multicolumn{@=tf_versions|length*inputs|length=@}{c}{@=model_type=@} &
+        @@ endfor @@ \\
+        @@ for i in range(model_types|length) @@
+            \cmidrule(lr){@=2+i*tf_versions|length*inputs|length=@-@=2+(i+1)*tf_versions|length*inputs|length-1=@}
+        @@ endfor @@
+    \textbf{TF version} &
+        @@ for model_type in model_types @@
+            @@ for tf_version in tf_versions @@
+                \multicolumn{@=inputs|length=@}{c}{@=tf_version=@} &
+            @@ endfor @@
+        @@ endfor @@
+        \\
+        @@ for i in range(model_types|length) @@
+            @@ for j in range(tf_versions|length) @@
+                \cmidrule(lr){@=2 + i*tf_versions|length*inputs|length + j*inputs|length=@-@=2 + i*tf_versions|length*inputs|length + (j+1)*inputs|length - 1=@}
+            @@ endfor @@
+        @@ endfor @@
+    \textbf{Input} &
+        @@ for model_type in model_types @@
+            @@ for tf_version in tf_versions @@
+                @@ for input in inputs @@
+                    @= input if input|length > 0 else 'default' =@ &
+                @@ endfor @@
+            @@ endfor @@
+        @@ endfor @@
+        \\
+
+    \midrule
+
+    @@for host,classes in rows.items()@@
+        @=host=@ &@@for class in classes@@ @=class=@ &@@endfor@@\\
+    @@endfor@@
+
+\end{tabular}

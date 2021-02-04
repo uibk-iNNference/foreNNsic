@@ -1,0 +1,7 @@
+**__pycache__
+inputs/*.npy
+data/*
+**.pyc 
+.idea
+*.log
+.vscode

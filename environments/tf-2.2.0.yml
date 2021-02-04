@@ -1,0 +1,6 @@
+name: foreNNsic-cpu-2.2.0
+dependencies:
+    - python==3.8.0
+    - pip
+    - pip:
+        - tensorflow==2.2.0

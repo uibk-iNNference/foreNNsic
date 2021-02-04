@@ -1,0 +1,7 @@
+\begin{tabular}{c@{~}c@{~}r@{~}r@{~}r}
+    Architecture & Label & Confidence & 2. Conf. & Difference \\
+    \midrule
+    @@ for host,results in rows.items() @@
+    @= host =@ & @= results['predicted class'] =@ & @= results['highest confidence'] =@ & @= results['second confidence'] =@ & @= results['difference'] =@ \\
+    @@ endfor @@
+\end{tabular}

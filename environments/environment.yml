@@ -1,0 +1,15 @@
+name: foreNNsic
+dependencies:
+    - python==3.8.0
+    - pip
+    - cudatoolkit=10.1.168
+    - cudnn=7.6.5
+    - pip:
+        - fabric
+        - tensorflow-gpu==2.2.0
+        - numpy
+        - matplotlib
+        - tables
+        - jinja2
+        - prettytable
+        - pandas

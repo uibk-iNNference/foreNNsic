@@ -1,0 +1,6 @@
+name: foreNNsic-cpu-1.15.0
+dependencies:
+  - python==3.7.0
+  - pip
+  - pip:
+      - tensorflow==1.15.0
