@@ -14,11 +14,12 @@ ARTIFICIAL_KEYS = ['_zero_image', '_half_image', '_one_image', '_horizontal_grad
                    '_diagonal_gradient_4', '_diagonal_gradient_5', '_diagonal_gradient_6', '_diagonal_gradient_14',
                    '_diagonal_gradient_15', '_diagonal_gradient_28']
 GPU_FILE_TEMPLATE = "prediction_{}_gpu.npy"
-ENVIRONMENT = "foreNNsic"  #! name of the conda environment
-PROJECT_DIR = "Projects/forennsic"  #! the root folder of this repository relative to your home folder
+ENVIRONMENT = "foreNNsic"  # ! name of the conda environment
+# ! the root folder of this repository relative to your home folder
+PROJECT_DIR = "Projects/forennsic"
 PREDICTIONS_DIR = "predictions"
 FULL_PREDICTIONS_DIR = f"{PROJECT_DIR}/{PREDICTIONS_DIR}"
-USER = "forennsic"  #! we used the same user for all remote machines
+USER = "forennsic"  # ! we used the same user for all remote machines
 
 HOSTS = {
     #! this dictionary maps from hostnames to usernames
@@ -26,10 +27,9 @@ HOSTS = {
 
 #! if you classify on a cluster, this can help deal with user and name configuration
 CLUSTER_NODES = [
-    "headnode"
 ]
-for i in range(10):
-    CLUSTER_NODES.append(f"gc{i}")
+# for i in range(10):
+#     CLUSTER_NODES.append(f"gc{i}")
 
 for n in CLUSTER_NODES:
     HOSTS[n] = HOSTS["cluster"]
