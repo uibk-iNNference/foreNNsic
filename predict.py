@@ -180,8 +180,8 @@ if __name__ == '__main__':
     # parser.add_argument("--gpu", action="store_true", default=False)
     parser.add_argument("--input", default="clean",
                         help="One of {clean, boundary, boundary-batch, artificial}. The inputs to use")
-    parser.add_argument("model_type", type=str, nargs='?',
-                        default='mnist', help="The model type to use (default: mnist)")
+    parser.add_argument("model_type", type=str,
+                        help="The model type to use")
     parser.add_argument("--lite", metavar="host", dest="conversion_host",
                         help="Predict using TensorFlow Lite model created on [host]")
     args = parser.parse_args()
